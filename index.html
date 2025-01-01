@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" integrity="sha512-VcyUgkobcyhqQl74HS1TcTMnLEfdfX6BbjhH8ZBjFU9YTwHwtoRtWSGzhpDVEJqtMlvLM2z3JIixUOu63PNCYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+    <title>ZATOICHI SUSHI</title>
+    
+</head>
+<style>
+    @font-face {
+        font-family: first-font;
+        src: url(fonts/Harukaze.ttf);
+    }
+    @font-face {
+        font-family: second-font;
+        src: url(fonts/Bankai_Demo_Version.otf);
+    }
+    body{
+        background-color: black;
+    }
+    .bg-img{
+        width: 100%;
+        height: 100vh;
+        background-image: url(image/bgimg.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .first-button{
+        color: #fff;
+        font-size: 20px;
+        background-color: transparent;
+        padding: 10px;
+        outline: none;
+        border: none;
+        letter-spacing: 2px;
+        margin: 10px;
+        transition: border-bottom 0.3s ease-in-out;
+        position: relative;
+        font-family: second-font;
+    }
+    .first-button::after {
+        content: ""; 
+        position: absolute; 
+        bottom: 0; 
+        left: 0;
+        width: 0; 
+        height: 2px; 
+        background-color: #ffffff; 
+        transition: width 0.3s ease-in-out; 
+    }
+    .first-button:hover::after {
+        width: 100%;
+    }
+    .last-button{
+        color: #fff;
+        font-size: 20px;
+        background-color: transparent;
+        padding: 10px;
+        outline: none;
+        border: none;
+        letter-spacing: 2px;
+        font-family: second-font;
+        margin: 10px;
+        transition: border-bottom 0.3s ease-in-out;
+        position: relative;
+    }
+    .last-button::after {
+        content: ""; 
+        position: absolute; 
+        bottom: 0; 
+        left: 0;
+        width: 0; 
+        height: 2px; 
+        background-color: #ffffff; 
+        transition: width 0.3s ease-in-out; 
+    }
+    .last-button:hover::after {
+        width: 100%;
+    }
+    .res-title h1{
+        font-family: first-font;
+        font-size: 100px;
+        letter-spacing: 10px;
+        font-weight: bolder;
+        animation-name: glow-effect;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes glow-effect{
+        from{
+            text-shadow:0 0 0px #fff;
+        }
+        to{
+            text-shadow: 0 0 30px #fff;
+        }
+    }
+    .slogan, .welcome{
+        font-family: second-font;
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    .vdo-txt{
+        background-color: #000000 ;
+    }
+    .description{
+        font-family: second-font;
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: 3px;
+        box-shadow: 0 0 10px #856060;
+    }
+    .menu-box{
+        font-family: first-font;
+        color: white;
+        font-size: 40px;
+        letter-spacing: 5px;
+        text-shadow: 0 0 30px #fff;
+        text-decoration: underline;
+    }
+    .inner-menu-box{
+        overflow: hidden;
+        display: flex;
+        justify-content: center;     
+    }
+    .inner-menu-box img{
+        opacity: 0.7;
+        transition:0.5s ease-in;
+    }
+    .inner-menu-box img:hover{
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    .dining-box{
+
+        font-family: first-font;
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+    .bottom-box{
+        background-image: url(image/footer-bg.jpg);
+        color: bisque;
+        font-family: second-font;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .day h3, .time h4{
+        font-size: 25px;
+        border-bottom: 1px solid #d3b7b7;
+    }
+    .green-box{
+        border: #fff 1px solid;
+    }
+    .logo-box{
+        gap: 30px;
+    }
+    .logo{
+        font-size: 30px;
+        transition: 0.5s ease-in;
+    }
+    .logo:hover{
+        transform: scale(1.2);
+    }
+    #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          border: 2px;
+          border-style: solid;
+          border-color: #fff;
+          outline: none;
+          background-color: rgb(0, 0, 0);
+          color: rgb(255, 255, 255);
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 50%;
+        }
+        
+        #myBtn:hover {
+          background-color: #ffffff;
+          color: black;
+          transition: 0.5s;
+        }
+</style>
+<body>  
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <script>
+
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+
+
+
+
+
+
+    <div class="bg-img">
+        <div class="container-fluid mt-4">
+            <div class="container">
+                <div class="row nav-bar">
+                    <div class="col-4">
+                        <div class="nav-button">
+                        <a href="index.html">
+                            <button class="first-button">HOME</button>
+                        </a>
+                        <a href="our-gallery.html">
+                            <button class="first-button">OUR GALLERY</button>
+                        </a>
+                        <a href="about-us.html">
+                            <button class="first-button">ABOUT US</button>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex align-items-center justify-content-center">
+                        <div class="nav-logo">
+                            <a  style="text-decoration: none; color: white;"><img src="image/logo1-removebg-preview.png" alt="" width="70px"></a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div style="display: flex; justify-content: center;">
+                            <a href="reservation.html">
+                            <button class="last-button">MAKE RESERVATIONS</button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-white p-5">
+            <div class="row mt-5">
+                <div class="col-12 mt-5 d-flex align-items-center justify-content-center">
+                    <div class="res-title">
+                        <h1>ZATOICHI SUSHI</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 mt-5">
+                    <div class="welcome mt-5 pt-5 text-center">
+                        <p>
+                            Welcome to ZATOICHI SUSHI, where tradition meets innovation in the heart of Japanese culinary excellence.
+                            Experience our Stylish and Flavorful Components
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid vdo-txt">
+        <div class="container">
+            <div class="row  py-5">
+                <div class="col-7 ">
+                    <div class="video">
+                        <video class="my-5" width="100%" autoplay muted preload="auto" loop>
+                            <source src="vdo/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="text-white description my-5 p-3">
+                        <p>
+                            Looking for the best Japanese-inspired restaurant?
+                            At Zatoichi, we offer a diverse menu of small and large plates, specialty craft cocktails, and a full sushi bar featuring sashimi and nigiri options flown fresh from Japan. We source the freshest ingredients from both local and international markets, ensuring our guests taste our heartfelt commitment to quality.
+                        </p>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-center my-5">
+                <div class="menu-box">VIEW OUR MENU 👇</div>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-3">
+                <div class=" inner-menu-box ">
+                    <img src="menu/dining menu.jpg" alt="" width="70%">
+                </div>
+                <div class="text-white dining-box pt-4 px-5">Dining Menu</div>
+            </div>
+            <div class="col-3">
+                <div class=" inner-menu-box mt-5">
+                    <img src="menu/drink menu.jpg" alt="" width="70%">
+                </div>
+                <div class="text-white dining-box pt-4 px-5">Drink Menu</div>
+            </div>
+            <div class="col-3">
+                <div class=" inner-menu-box"> 
+                    <img src="menu/desert menu.jpg" alt="" width="70%">
+                </div>
+                <div class="text-white dining-box pt-4 px-5">Desert Menu</div>
+            </div>
+            <div class="col-3">
+                <div class=" inner-menu-box mt-5">
+                    <img src="menu/dining menu.jpg" alt="" width="70%">
+                </div>
+                <div class="text-white dining-box pt-4 px-5">Dining Menu</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container-fluid bottom-box">
+        <div class="container green-box">
+            <div class="row">
+
+                <div class="col-12 d-flex align-items-center justify-content-center mt-4">
+                    <div class="date p-4">
+                        <div class="day">
+                            <h3>MONDAY - FRIDAY</h3>
+                        </div>
+                        <div class="time mt-4 d-flex align-items-center justify-content-center">
+                            <h4>7am - 10pm</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 mx-5">
+                <div class="col-6">
+                    <div>
+                        <h3>OUR SOCIAL</h3>
+                        <div class="d-flex align-items-center  logo-box">
+                        <div class="logo"><i class="bi bi-instagram"></i></div>
+                        <div class="logo"><i class="bi bi-whatsapp"></i></div>
+                        <div class="logo"><i class="bi bi-facebook"></i></div>
+                        <div class="logo"><i class="bi bi-linkedin"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 d-flex  justify-content-center" style="gap: 20px;">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="img-logo">
+                            <a  style="text-decoration: none; color: white;"><img src="image/logo1-removebg-preview.png" alt="" width="70px"></a>
+                        </div>
+                        <h3>ZATOICHI SUSHI</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
